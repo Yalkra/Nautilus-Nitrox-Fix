@@ -1,5 +1,12 @@
 # Nautilus / Nitrox Compatibility Fix
 
+## Download
+
+- Release page: https://github.com/Yalkra/Nautilus-Nitrox-Fix/releases/tag/v1.0.0
+- Direct download: https://raw.githubusercontent.com/Yalkra/Nautilus-Nitrox-Fix/main/Nautilus1.0.0-pre.50_Nitrox1.8.1.0_FIX.zip
+
+---
+
 ## Why this exists
 
 This patch was created because my partner and I wanted to play Subnautica Nitrox multiplayer while continuing to use newer Nautilus releases.
