@@ -7,15 +7,13 @@
 
 ---
 
-## Why this exists
+## About this patch
 
-This patch was created because my partner and I wanted to play Subnautica Nitrox multiplayer while continuing to use newer Nautilus releases.
+This repository contains a small compatibility fix for players who want to use Nitrox 1.8.1.0 alongside newer Nautilus releases.
 
-When using Nitrox 1.8.1.0 with newer Nautilus versions, our game would become stuck on the epilepsy warning screen during startup. After investigating the issue, I traced the problem to changes introduced in Nautilus' input handling system, from 1.0.0-pre.45+, and created a compatibility fix.
+My partner and I were blocked by an issue where the game got stuck on the epilepsy warning screen during startup. After investigating, I traced the problem to Nautilus input-handling changes introduced in 1.0.0-pre.45 and built this patch to restore compatibility.
 
-The Nautilus team has stated that Nitrox compatibility is not currently a development priority. This is completely understandable, as Nitrox is a separate project with different goals and requirements. However, it means that players wishing to use both projects together currently have limited options.
-
-This repository exists to provide a community fix for that specific compatibility issue.
+This is a community patch, not an official Nautilus or Nitrox update. Nitrox compatibility is not currently a development priority for the Nautilus team, so this repository is meant to help other players who need a practical workaround.
 
 ---
 
