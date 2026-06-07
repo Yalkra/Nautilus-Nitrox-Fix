@@ -1,35 +1,39 @@
 # Nautilus / Nitrox Compatibility Fix
 
+**Fixes Subnautica startup freeze at epilepsy warning screen when using Nitrox with Nautilus 1.0.0.45+**
+
 - Discussion / comments: https://github.com/Yalkra/Nautilus-Nitrox-Fix/issues/1
+- Related issue: https://github.com/SubnauticaModding/Nautilus/issues/644
 
 ## Download
 
 - Release page: https://github.com/Yalkra/Nautilus-Nitrox-Fix/releases/tag/v1.0.0
 - Direct download: https://raw.githubusercontent.com/Yalkra/Nautilus-Nitrox-Fix/main/Nautilus1.0.0-pre.50_Nitrox1.8.1.0_FIX.zip
 
-
 ---
 
 ## About this patch
 
-This repository contains a small compatibility fix for players who want to use Nitrox 1.8.1.0 alongside newer Nautilus releases.
+This repository contains a compatibility fix for Subnautica players who want to use Nitrox 1.8.1.0 multiplayer mod alongside newer Nautilus releases (1.0.0.45 and later).
 
-My partner and I were blocked by an issue where the game got stuck on the epilepsy warning screen during startup. After investigating, I traced the problem to Nautilus input-handling changes introduced in 1.0.0-pre.45 and built this patch to restore compatibility.
+**The Problem:** Subnautica hangs on the epilepsy warning screen when launching through Nitrox with Nautilus 1.0.0.45+. This is caused by changes to Nautilus' input system that conflict with Nitrox's custom input registration.
 
-This is a community patch, not an official Nautilus or Nitrox update. Nitrox compatibility is not currently a development priority for the Nautilus team, so this repository is meant to help other players who need a practical workaround.
+**The Solution:** This patch modifies Nautilus' `GameInputPatcher.cs` to restore compatibility by ensuring externally registered GameInput buttons are imported before Nautilus enables its input action map.
+
+This is a community patch, not an official Nautilus or Nitrox update. Nitrox compatibility is not currently a development priority for the Nautilus team, so this repository is meant to help other players experiencing the same startup freeze issue.
 
 ---
 
 ## Symptoms this patch may fix
 
-If you are using Nitrox and newer versions of Nautilus, you may experience:
+If you are using Nitrox and newer versions of Nautilus (1.0.0.45+), you may experience:
 
-* The game becoming stuck on the epilepsy warning screen.
-* Failure to reach the main menu.
-* Nitrox startup failures.
-* Errors relating to `GameInputPatcher` or custom key bindings.
+* **Subnautica hanging on the epilepsy warning screen** during startup
+* Failure to reach the main menu
+* Nitrox startup failures
+* Errors relating to `GameInputPatcher` or custom key bindings
 
-If those symptoms sound familiar, this patch may help.
+If those symptoms sound familiar, this patch may help resolve the epilepsy warning screen freeze.
 
 ---
 
@@ -55,11 +59,11 @@ While this patch allows Nitrox and newer Nautilus versions to start correctly to
 
 There is currently no universal server-side mod support system in Nitrox. As a result, many mods may:
 
-* Desynchronise players.
-* Cause unexpected behaviour.
-* Break progression.
-* Affect physics.
-* Work for one player but not another.
+* Desynchronise players
+* Cause unexpected behaviour
+* Break progression
+* Affect physics
+* Work for one player but not another
 
 For example, during testing we found that the TODO List mod caused players to sink into the ground and stop consuming oxygen.
 
@@ -74,24 +78,25 @@ Tested successfully with:
 ```text
 Subnautica         1.22.83031
 Nitrox             1.8.1.0
-Nautilus           1.0.0.pre50
+Nautilus           1.0.0-pre.50
 ```
 
-The original compatibility issue was reproduced with newer Nautilus releases and was not present in older versions such as 1.0.0.43. If you want to update older versions I've made the GameInputPatcher.cs code available to use freely.
+The original compatibility issue was reproduced with Nautilus 1.0.0.45+ and was not present in older versions such as 1.0.0.43. If you want to update older versions, the source code is provided for reference.
 
 ---
 
 ## Installation
 
-1. Back up your original Nautilus.dll.
+1. Back up your original Nautilus.dll
 2. Replace:
 
 ```text
 Subnautica\BepInEx\plugins\Nautilus\Nautilus.dll
 ```
 
-with the version provided in this repository.
-3. Launch the game normally through Nitrox.
+with the patched version provided in this repository.
+
+3. Launch Subnautica normally through Nitrox
 
 ---
 
@@ -109,6 +114,6 @@ If an official Nautilus update resolves this compatibility issue in the future, 
 
 ## Credits
 
-* The Nautilus developers for creating and maintaining Nautilus.
-* The Nitrox developers for creating Nitrox multiplayer.
-* Community members who tested and confirmed the compatibility fix.
+* The Nautilus developers for creating and maintaining Nautilus
+* The Nitrox developers for creating Nitrox multiplayer
+* Community members who tested and confirmed the compatibility fix
