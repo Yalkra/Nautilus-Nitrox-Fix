@@ -1,3 +1,5 @@
+**Notice: Although I've managed to get the latest Nautilus working with Nitrox, there are some de-syncing issues with mods that I'm now investigating. I'll update on progress.**
+
 # Nautilus / Nitrox Compatibility Fix
 
 **Fixes Subnautica startup freeze at epilepsy warning screen when using Nitrox with Nautilus 1.0.0.45+**
