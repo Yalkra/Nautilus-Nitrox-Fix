@@ -1,13 +1,24 @@
-**Notice: Although I've managed to get the latest Nautilus working with Nitrox, there are some de-syncing issues with mods that I'm now investigating. I'll update on progress.**
 
-Mods Tested: https://github.com/Yalkra/Nautilus-Nitrox-Fix/issues/2
+## Nautilus / Nitrox Compatibility Fix
 
-# Nautilus / Nitrox Compatibility Fix
+**Fixes Subnautica startup freeze at epilepsy warning screen when using Nitrox with Nautilus 1.0.0.50**
 
-**Fixes Subnautica startup freeze at epilepsy warning screen when using Nitrox with Nautilus 1.0.0.45+**
+- Related issue: https://github.com/SubnauticaModding/Nautilus/issues/644
+
+---
+
+## Important: Nitrox and Mods
+
+Nitrox was not designed to support arbitrary gameplay mods.
+
+While this patch allows Nitrox and newer Nautilus versions to start correctly together, it does **not** guarantee that other mods will function correctly in multiplayer.
+
+There is currently no universal server-side mod support system in Nitrox. As a result, many mods may cause unexpected behaviours.
 
 - Discussion / comments: https://github.com/Yalkra/Nautilus-Nitrox-Fix/issues/1
-- Related issue: https://github.com/SubnauticaModding/Nautilus/issues/644
+- Mods Tested: https://github.com/Yalkra/Nautilus-Nitrox-Fix/issues/2
+
+---
 
 ## Download
 
@@ -28,19 +39,6 @@ This is a community patch, not an official Nautilus or Nitrox update. Nitrox com
 
 ---
 
-## Symptoms this patch may fix
-
-If you are using Nitrox and newer versions of Nautilus (1.0.0.45+), you may experience:
-
-* **Subnautica hanging on the epilepsy warning screen** during startup
-* Failure to reach the main menu
-* Nitrox startup failures
-* Errors relating to `GameInputPatcher` or custom key bindings
-
-If those symptoms sound familiar, this patch may help resolve the epilepsy warning screen freeze.
-
----
-
 ## What was changed?
 
 Only **one file** was modified from the original Nautilus source code:
@@ -52,26 +50,6 @@ GameInputPatcher.cs
 No other Nautilus source files were changed.
 
 The modification imports externally registered GameInput buttons before Nautilus enables its input action map, restoring compatibility with Nitrox's custom input registration system.
-
----
-
-## Important: Nitrox and Mods
-
-Nitrox was not designed to support arbitrary gameplay mods.
-
-While this patch allows Nitrox and newer Nautilus versions to start correctly together, it does **not** guarantee that other mods will function correctly in multiplayer.
-
-There is currently no universal server-side mod support system in Nitrox. As a result, many mods may:
-
-* Desynchronise players
-* Cause unexpected behaviour
-* Break progression
-* Affect physics
-* Work for one player but not another
-
-For example, during testing we found that the TODO List mod caused players to sink into the ground and stop consuming oxygen.
-
-If you experience strange gameplay issues while using Nitrox, always test with fewer mods before reporting a Nitrox problem.
 
 ---
 
