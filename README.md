@@ -1,4 +1,5 @@
 **Notice: Although I've managed to get the latest Nautilus working with Nitrox, there are some de-syncing issues with mods that I'm now investigating. I'll update on progress.**
+
 Mods Tested: https://github.com/Yalkra/Nautilus-Nitrox-Fix/issues/2
 
 # Nautilus / Nitrox Compatibility Fix
